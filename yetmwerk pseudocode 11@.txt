@@ -1,0 +1,68 @@
+1,write pseudocode for linear and binary search algorithm and determine time complexity both algorism respectively?
+
+
+Linear Search Pseudocode:
+Linear search is a simple searching algorithm that checks every element in the list until it finds the target.
+
+1. Start at the first element of the array.
+2. Compare the current element with the target value.
+3. If the element is the target value, return the index of the element.
+4. If the element is not the target, move to the next element.
+5. Repeat steps 2-4 until the target is found or you reach the end of the list.
+6. If the target is not found after traversing the entire array, return -1 
+.Best case: O(1) target is found in the first element
+.Worst case: O(n) target is at the last position or not found at all
+.Average case: O(n) on average 
+
+Binary Search Pseudocode:
+Binary search works by repeatedly dividing the sorted list in half and comparing the middle element with the target.
+Binary Search Pseudocode:
+1. Set low = 0 and high = length of the array - 1.
+2. While low <= high:
+    Set mid = (low + high) // 2 (integer division).
+    If the mid element is equal to the target, return mid (element found).
+    If the mid element is greater than the target, set high = mid - 1 (search in the left half).
+    If the mid element is less than the target, set low = mid + 1 (search in the right half).
+3. If the target is not found, return -1 
+.Best case: O(1) target is found at the middle
+.Worst case: O(log⁡n) each step cuts the search space in half
+.Average case: O(log⁡n)
+
+2,,wrtite pythone function to implement  linear and binary search algorithm based on above pseudocode 
+#linear search implementation 
+def linear_search (arr,target):
+    for i in range(len(arr)):
+        if arr[i]==target:
+           return i #element found ,return the index
+    return -1#element not found
+    
+    
+    
+    #bineary search implementation 
+def test_search(arr,target):
+   low=0
+   high=len(arr)-1
+   while low<=high:
+        mid=(low+high)//2
+        if arr (mid==target):
+            return mid#element found,return the index 
+        elif arr[mid]>target:
+            high=mid-1#search in the left half 
+        else:
+            low=mid+1#search in the right half
+     return-1#element not found 
+ 
+#3,test apython function using real world example dataset
+arr=[1,3,5,7,9] # unsorted dataset
+target=5#we want to search for the value 50
+
+#linear search test
+linear_result=linear search(arr,target)
+print(f"linear search result for{target}:inex{linear result}")
+
+
+
+#binary search test 
+sorted arr=sorted arr = sorted(arr) binary search requires the array to be Sorted 
+binary result =binary search(sorted arr,target)
+print(f"binary search result for{target}:index {binary result}")
